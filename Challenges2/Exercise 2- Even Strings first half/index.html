@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Even Strings first Half</title>
+</head>
+<body>
+    <h1>JavaScript Challenges/Exercises No. 2</h1>
+    <h3>(Even String's First Half)</h3>
+        <pre>
+        <b><u>Objective</u></b>: Write a JavaScript program
+                   to extract the first half
+                   of a string of even length. 
+
+            <b><u>Notes</u></b>: this is going to be tricky                         <b><u>What's Used</u></b>: + functions/arrow functions
+                   first we examine the string                                     + .length property
+                   to see if it's characters                                       + division (/)
+                   equal an even number- us modulas (%)                            + .slice() string method 
+                   if it is we need to then                                        + if else conditional statement 
+                   divide length in half (variable)                                + variables
+
+            <b><u>Code</u></b>:
+                //1st part - SUCCESS!
+                    function stringHalf(str) {
+                        let half = str.length/2
+                        return half
+                    }
+                    document.getElementById("result1").innerHTML = stringHalf("worlds");
+
+                //2nd part
+                    function stringHalfReturn(str) {
+                        let half = str.length/2;
+                        let firstHalf = str.slice(0, half);
+                        return firstHalf
+                    }
+                    document.getElementById("result2").innerHTML = stringHalfReturn("worlds");
+
+                //3rd part
+                    function evenStr(str) {
+                        let x = str.length;
+                        if(x % 2 === 0){
+                            return "even";
+                        } else return "uneven";
+                    }
+                    document.getElementById("result3").innerHTML = evenStr("worlds");
+                    document.getElementById("result4").innerHTML = evenStr("world");
+
+                //4th part
+                    function evenStrFirstHalf(str) {
+                        let x = str.length;
+                        let y = x/2;
+                        let a = str.slice(0, y);
+                        if(x % 2 === 0) {
+                            return a;
+                        } else return str;
+                    }
+                    document.getElementById("result5").innerHTML = evenStrFirstHalf("Missippi");
+                    document.getElementById("result6").innerHTML = evenStrFirstHalf("mothers");
+                    document.getElementById("result7").innerHTML = evenStrFirstHalf("even");
+
+                //Their version
+                    const theirFirstHalf = (str) => str.slice(0, str.length / 2);
+        
+                    document.getElementById("result8").innerHTML = theirFirstHalf("moms");
+                    document.getElementById("result9").innerHTML = theirFirstHalf("mother");
+                    document.getElementById("result10").innerHTML = theirFirstHalf("mothers");
+
+            <b><u>Results</u></b>: <span id="result1"></span>           //string len divided in half 
+                     <span id="result2"></span>         //putting the first half of a string into .slice() method
+                     <span id="result3"></span>        //conditional test to see if string is even or uneven
+                     <span id="result4"></span>
+                     <span id="result5"></span>        //argument "Missippi"
+                     <span id="result6"></span>     //argument "mothers"
+                     <span id="result7"></span>          //argument "even" to see if 4 divided correctly
+                     <span id="result8"></span>          //argument "moms"
+                     <span id="result9"></span>         //argument "mother"
+                     <span id="result10"></span>         //argument "mothers"
+
+
+        </pre>
+
+        <script>
+        //1st part - SUCCESS!
+            function stringHalf(str) {
+                let half = str.length/2
+                return half
+            }
+            document.getElementById("result1").innerHTML = stringHalf("worlds");
+
+        //2nd part
+        function stringHalfReturn(str) {
+                let half = str.length/2;
+                let firstHalf = str.slice(0, half);
+                return firstHalf
+            }
+            document.getElementById("result2").innerHTML = stringHalfReturn("worlds");
+
+        //3rd part
+            function evenStr(str) {
+                let x = str.length;
+                if(x % 2 === 0){
+                    return "even";
+                } else return "uneven";
+            }
+            document.getElementById("result3").innerHTML = evenStr("worlds");
+            document.getElementById("result4").innerHTML = evenStr("world");
+
+        //4th part
+            function evenStrFirstHalf(str) {
+                let x = str.length;
+                let y = x/2;
+                let a = str.slice(0, y);
+                if(x % 2 === 0) {
+                    return a;
+                } else return str;
+            }
+            document.getElementById("result5").innerHTML = evenStrFirstHalf("Missippi");
+            document.getElementById("result6").innerHTML = evenStrFirstHalf("mothers");
+            document.getElementById("result7").innerHTML = evenStrFirstHalf("even");
+
+        //Their version
+            const theirFirstHalf = (str) => str.slice(0, str.length / 2);
+
+            document.getElementById("result8").innerHTML = theirFirstHalf("moms");
+            document.getElementById("result9").innerHTML = theirFirstHalf("mother");
+            document.getElementById("result10").innerHTML = theirFirstHalf("mothers");
+        </script>
+</body>
+</html>

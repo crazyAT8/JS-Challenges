@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Challenge</title>
+</head>
+<body>
+    <pre>
+        <h1>Check Two Numbers Then Their Sum</h1>
+        <h3>(a JavaScript Challenge)</h3>
+            <p>
+                Write a JavaScript program to check two
+                numbers and return true if one of the numbers
+                is 100 or if the sum of the two numbers is 100.
+            </p>
+            <p>
+                <u><b>Code</b></u>:                                                         <u><b>Alternate Way</b></u>
+                    function checkBothThenAdd(a,b) {                              const checkBothThenAdd = (a,b) => a === 100 || b === 100 || (a+b) === 100;
+                        if(a == 100 | b == 100 | a + b == 100) {
+                            return true;
+                        } else {
+                            return false;
+                        }
+                    }
+
+                    document.getElementById("test1").innerHTML = checkBothThenAdd(50,50);
+                <u><b>Result1</b></u>: <p id="test1"></p>
+                    document.getElementById("test2").innerHTML = checkBothThenAdd(4,2);
+                <u><b>Result2</b></u>: <p id="test2"></p>
+                    document.getElementById("test3").innerHTML = checkBothThenAdd(100,2);
+                <u><b>Result3</b></u>: <p id="test3"></p>
+                    document.getElementById("test4").innerHTML = checkBothThenAdd(4,100);
+                <u><b>Result4</b></u>: <p id="test4"></p>
+                    document.getElementById("test5").innerHTML = checkBothThenAdd(-4,104);
+                <u><b>Result5</b></u>: <p id="test5"></p>
+            </p>
+            
+    </pre>
+
+    <script>
+        function checkBothThenAdd(a,b) {
+            if(a == 100 | b == 100 | a + b == 100) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        document.getElementById("test1").innerHTML = checkBothThenAdd(50,50);
+        document.getElementById("test2").innerHTML = checkBothThenAdd(4,2);
+        document.getElementById("test3").innerHTML = checkBothThenAdd(100,2);
+        document.getElementById("test4").innerHTML = checkBothThenAdd(4,100);
+        document.getElementById("test5").innerHTML = checkBothThenAdd(-4,104);
+    </script>
+</body>
+</html>

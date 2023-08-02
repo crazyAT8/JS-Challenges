@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New String</title>
+</head>
+<body>
+    <h1>JavaScript Exercise No. 5</h1>
+    <h3>(add new string)</h3>
+    <pre>
+        Write a JavaScript program to create a new 
+        string adding "New!" in front of a given string.
+        If the given string begins with "New!" already
+        then return the original string.
+
+        <b><u>Notes</u></b>: need to make a function                <b><u>Conclusion</u></b>: they didn't use any conditional statements
+            the parameter will be str                               instead they used an arrow function 
+            needs to return the value of str                        called a string as a parameter
+            with "new" in front of it                               checked the start of the string for the word "New!"
+            conditional statement to see                                with .indexOf
+            if the string being passed already has                  and attached a ternary statement 
+            the word new in it                                          which asks if condition is true then option 1
+                                                                                                if false then option 2
+                                                                                                
+        <b><u>Result(s)</u></b>:<span id="result1"></span>            //My try- FAILED
+                                                function addNew(str) {
+                                                    let x = "New";
+                                                    let y = str;
+                                                    let z = x + y;
+                                                    if(str === "new"||"New") {
+                                                        return str;
+                                                    } else {
+                                                        return z;
+                                                    }
+                                                }
+                                                document.getElementById("result1").innerHTML = addNew("day");
+
+                <span id="result2"></span>  //First Half
+                                                const addNew2 = (str) => `New! ${str}`;
+                                                document.getElementById("result2").innerHTML = addNew2("New! day");
+
+                <span id="result3"></span>      //Second half
+                                                const addNew3 = (str) =>
+                                                    str.indexOf('New!') === 0 ? str :`New! ${str}`;
+                                                
+                                                document.getElementById("result3").innerHTML = addNew3("New! year");
+    </pre>
+
+    <script>
+    //my fix
+        function addNew(str) {
+            let x = "New";
+            let y = str;
+            let z = x + y;
+            if(str === "new"||"New") {
+                return str;
+            } else {
+                return z;
+            }
+        }
+
+        document.getElementById("result1").innerHTML = addNew("day");
+
+    //theirs
+    //first part of the problem
+        const addNew2 = (str) => `New! ${str}`;
+
+        document.getElementById("result2").innerHTML = addNew2("New! day");
+
+    //second half
+        const addNew3 = (str) =>
+            str.indexOf('New!') === 0 ? str :`New! ${str}`;
+
+        document.getElementById("result3").innerHTML = addNew3("New! year");
+    </script>
+</body>
+</html>

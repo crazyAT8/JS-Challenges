@@ -1,0 +1,13 @@
+JavaScript Practice Exercises for Beginners Part 4
+URL: https://www.youtube.com/watch?v=FGklOjedW7E&list=PLpc_YvcwbxaSn6jn0VaTcG8A0Grgs1GSB&index=4
+
+
+Exercise No.1
+    Given a year, repeat if it is a leap year 
+
+Exercise No.2
+    Write a JS program
+    to compare two objects
+    to determine if the first one contains 
+    the same properties as the second one 
+    (which may also have additional properties)

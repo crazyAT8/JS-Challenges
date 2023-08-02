@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <h1>JavaScript Exercise/Challenge</h1>
+    <h3>(title)</h3>
+    <pre>
+        <b><u>Objective</u></b>: Write a JavaScript program                             <b><u>Notes</u></b>: Can't have two loops running at the same time 
+                   to find the number of even                                    if its just sitting out in the open
+                   digits in an array of integers                                       need to make it into a function
+        
+        <b><u>Steps</u></b>:
+            - finding the length of an array
+            - loop through and array 
+            - if the number's modulas does not equal zero 
+                that iteration will be skipped 
+            - every number that isn't skipped 
+                is put into an empty array 
+            - call the empty array with 
+                .length
+
+        <b><u>Code</u></b>:
+        // Mine----------- Failed
+                /* 
+                    const numbers = [11, 2, 3, 4, 15, 6];
+
+                    let evens = [];
+                    for (let x in numbers) {
+                        if (x % 2 !== 0) { 
+                            break; 
+                        }
+                        evens += numbers[x]
+                    }
+                
+                // document.getElementById("result1").innerHTML = evens;
+                // document.getElementById("result2").innerHTML = evens.length;
+                */
+        // Theirs
+                const countEvenNumbers = (arr) =>
+                    arr.filter(num => num % 2 === 0).length;
+
+                document.getElementById("result3").innerHTML = countEvenNumbers([1,2,3,4,5,6]);
+                document.getElementById("result4").innerHTML = countEvenNumbers([2,2,2,2,2,2]);
+                document.getElementById("result5").innerHTML = countEvenNumbers([3,5,7,9,10,100]);
+
+
+        <b><u>Results</u></b>: 1. <span id="result1"></span>11
+                 2. <span id="result2"></span>2
+
+                 3. <span id="result3"></span>
+                 4. <span id="result4"></span>
+                 5. <span id="result5"></span>
+
+    </pre>
+    <script>
+    // Mine----------- Failed
+        /* 
+        const numbers = [11, 2, 3, 4, 15, 6];
+
+        let evens = [];
+        for (let x in numbers) {
+             if (x % 2 !== 0) { 
+                 break; 
+             }
+             evens += numbers[x]
+         }
+        
+        // document.getElementById("result1").innerHTML = evens;
+        // document.getElementById("result2").innerHTML = evens.length;
+        */
+    // Theirs
+        const countEvenNumbers = (arr) =>
+            arr.filter(num => num % 2 === 0).length;
+
+        document.getElementById("result3").innerHTML = countEvenNumbers([1,2,3,4,5,6]);
+        document.getElementById("result4").innerHTML = countEvenNumbers([2,2,2,2,2,2]);
+        document.getElementById("result5").innerHTML = countEvenNumbers([3,5,7,9,10,100]);
+
+    </script>
+</body>
+</html>

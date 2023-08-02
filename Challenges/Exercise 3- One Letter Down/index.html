@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Exercise</title>
+    <link rel="stylesheet" href="./style.css">
+    
+</head>
+<body>
+    <h1>JavaScript Exercises for Beginner</h1>
+        <h2>(Exercise 3-letter replacement)</h2>
+        <p id="question">Write a JavaScript program to replace every character in a given string with the character following it in the alphabet.</p> 
+        <pre>
+        <div>
+        //Note:
+            //"str" is the general abbreviation for string in JavaScript
+            //"chr" is the general abbreviation for characters in JavaScript
+            
+        //Create a function
+                                //passes in a string(which is the parameter of the function)
+        const moveCharsForward = (str) =>  
+        str                              //since we want to modify the contents of a string
+        .split('')  //every letter       //split returns every character as an array
+        .map(char =>                     //map loops through the given array(s) one at a time
+            String.fromCharCode           //converts the numbers back to letters
+            (char.charCodeAt(0) + 1))     //this gives the character a numerical value and increases it by 1
+        .join('');                       //since we have our string split into an arrays we need to join it back together
+        </div>
+        <div>  
+        Another way to look at it is:
+        <b>const moveCharsForward = (str) =>
+        str.split('').map(char => String.fromCharCode(char.charCodeAt(0) + 1)).join('');</b>
+
+        document.getElementById("result1").innerHTML = moveCharsForward("string");
+                                                                        //the argument
+        Result:<p id="result1"></p>
+        </div>
+        <div>
+        <b><u>Step1</u></b> (take all the character of the string and turn them into individual entities)
+
+        const moveCharsForwardStep1 = (str) => str.split('');
+        document.getElementById("step1").innerHTML = moveCharsForwardStep1("string");
+
+        Step 1:<p id="step1"></p>
+        </div>
+        <div>
+        <b><u>Step2</u></b> (turn the individual entity characters into numbers)
+
+        const moveCharsForwardStep2 = (str) => str.split('').map(char => char.charCodeAt(0));
+        document.getElementById("step2").innerHTML = moveCharsForwardStep2("string");
+
+        Step 2:<p id="step2"></p>
+        //these are the ASCII/Unicode values of the letters
+        </div>
+        <div>
+        <b><u>Step3</u></b> (increase their numerical value by 1)
+
+        const moveCharsForwardStep2 = (str) => str.split('').map(char => char.charCodeAt(0) + 1);
+        document.getElementById("step").innerHTML = moveCharsForwardStep("string");
+
+        Step 3:<p id="step3"></p>
+        </div>
+        <div>
+        <b><u>Step4</u></b> (turn the numerical entities back into letter entities)
+
+        const moveCharsForwardStep4 = (str) => str.split('').map(char => String.fromCharCode(char.charCodeAt(0) + 1));
+        document.getElementById("step4").innerHTML = moveCharsForwardStep4("string");
+
+        Step 4:<p id="step4"></p> 
+        </div>
+        <div>
+        <b><u>Step5</u></b> (join all the individual character objects back together)
+
+        const moveCharsForwardStep5 = (str) => str.split('').map(char => String.fromCharCode(char.charCodeAt(0) + 1)).join('');
+        document.getElementById("step5").innerHTML = moveCharsForwardStep5("string");
+
+        Step 5:<p id="step5"></p> 
+        </div>
+        </pre>
+        <a href="https://www.youtube.com/watch?v=N65RvNkZFGE" target="_blank">Youtube</a>
+
+        <script src="code.js"></script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Front Back Together</title>
+</head>
+<body>
+    <h1>Javascript Challenges/Exercises No.1</h1>
+    <h3>(String's front back together)</h3>
+        <pre>
+            <b><u>Objective</u></b>: Write a JavaScript program to create a new string             <b><u>Ex</u></b>: <i>"Bathing" becomes</i>
+                        from a given string taking the first 3 characters                <i>"Bating" </i>
+                        and the last 3 characters of a string and adding
+                        them together. The string length must be 3 or more,
+                        if not, the original string is returned.
+
+            <b><u>Notes</u></b>: going to have to write a function                          <b><u>Side Note</u></b>: they ended up using
+                  .slice() takes the string from index # to index #                      the ternary operator again
+                   use a single neg. # to start from the back                            but I called the .slice() 
+                   but only takes 1 argument                                             and they didn't use the
+                   and am going to have to use an if else statement                      less then or equal to (<=)
+
+            <b><u>Code</u></b>:
+                //Mine- worked great (with 8 lines of code ={)
+                    function frontPlusBack(str) {
+                        let front = str.slice(0,3);
+                        let back = str.slice(-3);
+                        let together = front + back;
+                        if(str.length <= 3) {
+                            return str;
+                        } else return together;
+                    }
+                    document.getElementById("result1").innerHTML = frontPlusBack("Top");
+                    document.getElementById("result2").innerHTML = frontPlusBack("Bathing");
+
+                //Theirs
+                    const makeNewString = (str) =>
+                        str.length < 3 ? str : str.slice(0, 3) + str.slice(-3); 
+
+            <b><u>Result(s)</u></b>: <span id="result1"></span>         <i>//Tested with a three letter word "Top"</i>
+                       <span id="result2"></span>      <i>//Tested with the word "Bathing"</i>
+                       <span id="result3"></span>      <i>//Tested with "abc"</i>
+                       <span id="result4"></span>      <i>//Tested with "abcdef"</i>
+                       <span id="result5"></span>      <i>//Tested with "abc123abc123"</i>
+                       <span id="result6"></span>          <i>//Tested with "ab"</i>
+
+        </pre>
+
+        <script>
+            function frontPlusBack(str) {
+                let front = str.slice(0,3);
+                let back = str.slice(-3);
+                let together = front + back;
+                if(str.length <= 3) {
+                    return str;
+                } else return together;
+            }
+            document.getElementById("result1").innerHTML = frontPlusBack("Top")
+            document.getElementById("result2").innerHTML = frontPlusBack("Bathing")
+
+        //Theirs
+            const makeNewString = (str) =>
+                str.length < 3 ? str : str.slice(0, 3) + str.slice(-3);
+
+            document.getElementById("result3").innerHTML = makeNewString("abc");
+            document.getElementById("result4").innerHTML = makeNewString("abcdef");
+            document.getElementById("result5").innerHTML = makeNewString("abc123abc123");
+            document.getElementById("result6").innerHTML = makeNewString("ab");
+        </script>
+</body>
+</html>

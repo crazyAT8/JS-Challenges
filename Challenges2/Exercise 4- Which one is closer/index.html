@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Which Number is Closer</title>
+</head>
+<body>
+    <h1>JavaScript Challenges/Exercises</h1>
+    <h3>(Which Number is Closer)</h3>
+    <pre>
+        <b><u>Objective</u></b>: Given two values,                              <b><u>Notes</u></b>: Eastest way would be 
+                   write a JavaScript program                            subtracting the number from 100
+                   to find out which one                                 and which ever outcome is lesser
+                   is nearest to 100                                     gets printed, but what if the number is 
+                                                                         greater then 100, then it would come 
+                                                                         out negative, which you could multiple
+                                                                         by -1 or swap
+                                                                         
+        <b><u>Code</u></b>:
+        //Their solution which assumes the two numbers will be less than 100
+            const closetTo100 = (a,b) => (100 - a) < (100 - b) ? a : b;
+
+            document.getElementById("result1").innerHTML = closetTo100(20,40);
+            document.getElementById("result2").innerHTML = closetTo100(-10,-20);
+            document.getElementById("result3").innerHTML = closetTo100(10,-20);
+            document.getElementById("result4").innerHTML = closetTo100(108,90);
+            document.getElementById("result5").innerHTML = closetTo100(108,100);
+
+        <b><u>Results</u></b>: <span id="result1"></span>
+                <span id="result2"></span>           //(-10,-20) that doesn't work
+                 <span id="result3"></span>           //(10,-20) that doesn't work
+                 <span id="result4"></span>          //(108,90) that worked
+                 <span id="result5"></span>          //(108,100) that didn't work
+    </pre>
+
+    <script>
+        //Their solution which assumes the two numbers will be less than 100
+        const closetTo100 = (a,b) => (100 - a) < (100 - b) ? a : b;
+
+        document.getElementById("result1").innerHTML = closetTo100(20,40);
+        document.getElementById("result2").innerHTML = closetTo100(-10,-20);
+        document.getElementById("result3").innerHTML = closetTo100(10,-20);
+        document.getElementById("result4").innerHTML = closetTo100(108,90);
+        document.getElementById("result5").innerHTML = closetTo100(108,100);
+    </script>
+</body>
+</html>

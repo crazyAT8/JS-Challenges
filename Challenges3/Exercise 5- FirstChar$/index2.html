@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Using Regular Expressions to Replace any or all Numbers</h1>
+
+    <p id="para1">"First number is 32, and a second number 100. Here is the last number 15."</p>
+
+    <span id="result1"></span>
+
+    <script>
+        let text = document.getElementById("para1").innerHTML;
+        let reg =/\d+/;
+        let result = text.match(reg);
+        document.getElementById("result1").innerHTML = result;
+    </script>
+</body>
+</html>

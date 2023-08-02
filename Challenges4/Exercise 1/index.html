@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript Exercise/Challenge</h1>
+    <h3>(title)</h3>
+    <pre>
+        <b><u>Objective</u></b>:                                                        <b><u>Notes</u></b>:
+                Given a year, report if it is a leap year.                              - leap year is every 4 years
+                                                                                        - last one was 2020
+                                                                                            next is 2024
+        
+        <b><u>Steps</u></b>:
+            - function that is fed a year as a parameter 
+            - is the parameter % 4
+                if there is no remainder then it is a leap year 
+        <b><u>Code</u></b>:
+        <b><u>Results</u></b>: <span id="test1"></span>(2020)
+                 <span id="test2"></span>(6)
+                 
+
+                 <input id="year" type="number"/>
+                 <button onclick="leapYear()">enter</button>
+                 <span id="test3"></span>
+
+                 <span id="test4"></span>
+                 <span id="test5"></span>
+    </pre>
+    <script>
+        function stepOne(value) {
+            let x = value;
+            return x;
+        }
+
+        function stepTwo(value) {
+            let x = value;
+            return x % 4;
+        }
+
+// Not working
+        // function leapYear(value) {
+        //     if(value % 4 === 0) {
+        //         return "its a leap year"
+        //     } else {
+        //         return "not a leap year"
+        //     }
+        // }
+
+        document.getElementById("test1").innerHTML = stepOne(2020);
+        document.getElementById("test2").innerHTML = stepTwo(6);
+        // document.getElementById("test3").innerHTML = LeapYear(2020);
+
+        function leapYear() {
+            let year = document.getElementById("year").value;
+            let isLeap = (year % 4 == 0) ? "Its a Leap Year":"Not a leap year";
+            document.getElementById("test3").innerHTML = isLeap;
+        }
+
+        function leapYear2(value) {
+            let year = value;
+            let isLeap = (year % 4 == 0) ? year + " is a leap year": year + " is not a leap year";
+            return isLeap;
+        }
+
+        document.getElementById("test4").innerHTML = leapYear2(2020);
+
+// there way
+        const isLeapYear = (year) => year % 4 === 0;
+
+        document.getElementById("test5").innerHTML = isLeapYear(2034);
+
+    </script>
+</body>
+</html>

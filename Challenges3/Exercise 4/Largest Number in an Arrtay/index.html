@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript Exercise/Challenge</h1>
+    <h3>(Find the Largest Number in an Array of Numbers)</h3>
+    <pre>
+        <b><u>Objective</u></b>: Write a JavaScript Program                         <b><u>Notes</u></b>: going to have to run a for loop 
+                   that finds the largest number                            - compare two numbers and the greater number is...
+                   in an array of numbers 
+        
+        <b><u>Steps</u></b>:
+            - there is a math function "Math.max()"
+                that which finds the highest number 
+                    in a set of given numbers 
+                        but instead of entering the numbers 
+                            individually and directly into the function 
+                                you can use the ES6 spread opperator 
+            - or create a new function 
+                which will except an array of values 
+                    inside the function define a local variable equal to zero 
+                        then set up a for loop to go through the length of the array 
+                        checking if each value is greater than the local variable 
+                        and if it is great then it becomes the highest number 
+                        so have it return the result of the loop 
+            - now lets factor in 
+                arrays with in an array 
+                    first step is to flatten the array 
+
+
+
+        <b><u>Code</u></b>:
+                const numbers = [1, 2, 3, 4, 5, 6];
+
+            // Arrays within arrays
+                const numbers2 = [1,2,3,[4,5,6,[7,8,9]],3,4,5,6];
+        
+                const flatten = (values) => values.reduce(
+                    (acc, item, index, array) => acc.concat(
+                        Array.isArray(item) ? flatten(item) 
+                        : item
+                    ), []
+                )
+        
+                const largestNumber = (values) => {
+                    let highest = 0;
+                    for (let i=0; i<values.length; i+=1) {
+                        if (values[i] > highest) {
+                            highest = values[i];
+                        }
+                    }
+                    return highest;
+                }
+        
+                let x = flatten(numbers2);
+        
+                document.getElementById("test").innerHTML = numbers;
+                document.getElementById("test1").innerHTML = Math.max(...numbers);
+                document.getElementById("test2").innerHTML = largestNumber(numbers); 
+                document.getElementById("test3").innerHTML = flatten(numbers2);
+                document.getElementById("test4").innerHTML = largestNumber(x);
+                
+
+        <b><u>Results</u></b>: test- <span id="test"></span>                   // just a basic print out of the array 
+                 test1- <span id="test1"></span>                            // result from Math.max built in function
+                 test2- <span id="test2"></span>                            // for loop is statement of a single array 
+                 test3- <span id="test3"></span>    // flattening a multi dimensional array 
+                 test4- <span id="test4"></span>                            // finding the highest number of a multi dimentional array 
+    </pre>
+    <script>
+        const numbers = [1, 2, 3, 4, 5, 6];
+
+    // Arrays within arrays
+        const numbers2 = [1,2,3,[4,5,6,[7,8,9]],3,4,5,6];
+
+    // Flatten multi-dimensional array
+        const flatten = (values) => values.reduce(
+            (acc, item, index, array) => acc.concat(
+                Array.isArray(item) ? flatten(item) 
+                : item
+            ), []
+        )
+
+    // Find highest number in the array
+        const largestNumber = (values) => {
+            let highest = 0;                                    // create the variable you are looking for
+            for (let i=0; i < values.length; i+=1) {            // loop through the entire length of the array index by index
+                if (values[i] > highest) {                      // if the value being read is greater then the highest variable
+                    highest = values[i];                        // replace the old highest value with the current value being read
+                }
+            }
+            return highest;                                      // show us what we are looking for
+        }
+
+        let x = flatten(numbers2);
+
+        document.getElementById("test").innerHTML = numbers;
+        document.getElementById("test1").innerHTML = Math.max(...numbers);
+        document.getElementById("test2").innerHTML = largestNumber(numbers); 
+        document.getElementById("test3").innerHTML = flatten(numbers2);
+        document.getElementById("test4").innerHTML = largestNumber(x);
+ 
+    </script>
+</body>
+</html>

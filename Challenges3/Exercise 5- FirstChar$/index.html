@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript Exercise/Challenge</h1>
+    <h3>(Find Highest Even Number)</h3>
+    <pre>
+        <b><u>Objective</u></b>: Write a JavaScript program                     <b><u>Notes</u></b>:
+                   A. to replace the first character                        
+                        in a string with a $ character 
+                   B. actually need to replace the first digit 
+                        in a string with a $ character                        
+        <b><u>Steps</u></b>:
+        A   1. make up a function that gets a string as a parameter 
+                returns the new string 
+            2. break up every character of the string 
+                and put them in an array 
+            3. replace the first or 0 index of the array with a specified character 
+            4. convert the array back to a string 
+            5. return the new string 
+
+        B   1. same
+            2. us the replace method on the string 
+                first parameter of replace is 
+                    regExpression /\d+/ which is 
+                        find digit (and it will return the first digit)
+                second parameter is 
+                    "$" character to replace it with
+
+        <b><u>Code</u></b>:
+        <b><u>Results</u></b>:
+                <span id="test1"></span>
+                <span id="test2"></span>
+                <span id="test3"></span>
+                <span id="test4"></span>
+                <span id="test5"></span>
+                <span id="test6"></span>
+                <span id="test7"></span>
+                <span id="test8"></span>
+    </pre>
+    <script>
+        function step1(str) {
+            let x = str;
+            return x;
+        }
+
+        function step2(str) {
+            let x = str;
+            return x.split("");
+        }
+
+        function step3(str) {
+            let x = str;
+            let y = x.split("");
+            y.splice(0, 1);
+            y.splice(0, 0, "$")
+            return y;
+        }
+
+        function step4(str) {
+            let x = str;
+            let y = x.split("");
+            y.splice(0, 1);
+            y.splice(0, 0, "$");
+            return y.join('');
+        }
+        document.getElementById("test1").innerHTML = step1("hello");
+        document.getElementById("test2").innerHTML = step2("hello");
+        document.getElementById("test3").innerHTML = step3("hello");
+        document.getElementById("test4").innerHTML = step4("hello");
+        document.getElementById("test5").innerHTML = step2("h38f84h");
+
+        function stringSet(str) {
+            let phrase = str;
+            let reg = /\d+/;
+            let result = phrase.match(reg);
+            return result;
+        }
+
+        function replaceFirstNumber(str) {
+            let phrase = str;
+            let result = phrase.replace(/\d+/, "$");
+            return result;
+        }
+
+// This is what they did
+        const replaceFirstDigit = (str) => str.replace(/[0-9]/, '$');
+
+        document.getElementById("test6").innerHTML = stringSet("h38f84h");
+        document.getElementById("test7").innerHTML = replaceFirstNumber("h38f84h");
+        document.getElementById("test8").innerHTML = replaceFirstDigit("h38f84h");
+
+
+    </script>
+</body>
+</html>

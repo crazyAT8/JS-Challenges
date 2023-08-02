@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Any Repeats</title>
+</head>
+<body>
+    <h1>JavaScript Challenges/Exercises</h1>
+    <h3>(Any Repeats)</h3>
+    <pre>
+        <b><u>Objective</u></b>: Write a JavaScript program                     <b><u>Notes</u></b>: Going to need to write a function
+                   to check a given string contains                      with a single string as a parameter
+                   2 to 4 occurences                                     First thing is to make 
+                   of a specified character                                 the string into an array
+                   so supply a given character                                  run a loop over the array 
+                   that is searched for inside                                  checking that the current iteration
+                   a given string for multi occurences                          is repeated anywhere else in the array
+                                                                                except for that iteration's index
+                                                                          includes() checks if an array contains a specified element 
+                                                                            going to have to slip in 
+                                                                            the the given iteration as a parameter 
+                                                                <b><i>MY APPROACH WAS ALL WRONG</i></b>
+
+        <b><u>Steps</u></b>: (THIS IS THEIR STEP BY STEP PROCCESS)
+            1) pass a string and a character in as parameters
+            2) split() string method to the string 
+                      which splits the string into an array of substrings
+            3) filter() array method 
+                      which creates a new array with every element in an array that pass a test
+                      or in other words, it will filter out everything that doesn't match
+                        a certain condition
+            4) pass in a callback function back to the filter() method
+                      in this case it's a conditional statement
+                        asking if a variable equals the char argument
+                            listed above
+                                so if it does match it will keep it within the array 
+                                    other wise it will drop it
+                * so at this point, the return will be 
+                    an array of characters split from the string 
+                        that matches the char argument 
+            5) add the .length property to the end of the function 
+                    to get an actual number 
+            6) now we have to write another function 
+                to see if it matches the condition of 
+                    being greater than 2 and less than 4
+                        given us a boolean return value 
+
+        <b><u>Code</u></b>:
+    //Theirs
+        const countChars = (str, char) =>
+            str.split('').filter(ch => ch === char).length;
+
+        const contains2To4 = (str, char) => 
+            countChars(str, char) >= 2 && countChars(str, char) <= 4;
+
+            document.getElementById("result1").innerHTML = contains2To4('ooh!', 'o');
+            document.getElementById("result2").innerHTML = contains2To4('oh!', 'o');
+            document.getElementById("result3").innerHTML = contains2To4('oooh!', 'o');
+            document.getElementById("result4").innerHTML = contains2To4('ooooh!', 'o');
+            document.getElementById("result5").innerHTML = contains2To4('oooooh!', 'o');
+
+        <b><u>Results</u></b>:
+            <span id="result1"></span>      // ('ooh!', 'o')
+            <span id="result2"></span>     // ('oh!', 'o')
+            <span id="result3"></span>      // ('oooh!', 'o')
+            <span id="result4"></span>      // ('ooooh!', 'o')
+            <span id="result5"></span>     // ('oooooh!', 'o')
+    </pre>
+
+    <script>
+        const countChars = (str, char) =>
+            str.split('').filter(ch => ch === char).length;
+
+        const contains2To4 = (str, char) => 
+            countChars(str, char) >= 2 && countChars(str, char) <= 4;
+
+        document.getElementById("result1").innerHTML = contains2To4('ooh!', 'o');
+        document.getElementById("result2").innerHTML = contains2To4('oh!', 'o');
+        document.getElementById("result3").innerHTML = contains2To4('oooh!', 'o');
+        document.getElementById("result4").innerHTML = contains2To4('ooooh!', 'o');
+        document.getElementById("result5").innerHTML = contains2To4('oooooh!', 'o');
+    </script>
+</body>
+</html>

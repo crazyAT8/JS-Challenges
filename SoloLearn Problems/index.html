@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>28.1</title>
+    <style>
+        .section {
+            float: right;
+        }
+        div {
+            display: inline;
+            border: 2px solid black;
+            border-radius: 10px;
+            width: 50%;
+            box-shadow: 3px 3px black;
+            background-color: antiquewhite;
+        }
+        section {
+            display: flex;
+        }
+        #null {
+            text-decoration: underline;
+            color: rgb(75, 75, 243);
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+    <h1>Alert, Prompt, and Confirm</h1>
+        <section>
+            <div class="">
+                <pre>
+                                <h3 style="display: inline;">The Alert Box</h3>     
+
+                    JavaScript offers three types of popup boxes
+                        1) Alert 
+                        2) Prompt
+                        3) Confirm
+                    
+                    An alert box is used when 
+                        you want to ensure that information 
+                            gets through to the user 
+                    When an alert box pops up, 
+                        the user must click OK to proceed.
+                    The alert function 
+                        takes a single parameter,
+                            which is the text displayed 
+                                in the popup box.
+        
+                    <b><u>Note</u></b>: to use line breaks 
+                        within a popup box, 
+                        use a backslash followed by 
+                        the character "n" (\n)
+                </pre> 
+            </div>
+            <div class="section">
+                <pre>
+                                            <h3 style="display: inline;">Prompt Box</h3>
+
+                +   A <b>prompt box</b> is often used to have 
+                        the user input a value before 
+                            entering the page.  
+                +   When a prompt box pops up, 
+                        the user will have to 
+                            click either OK or Cancel 
+                                to proceed after entering   
+                                    the input value.
+                +   If the user clicks OK, 
+                        the box <b>returns the input value</b>
+                +   If the user clicks Cancel, 
+                        the box returns <span id="null">null</span>
+                    
+                +   The <b>prompt()</b> method takes two parameters: 
+                        1) The label, 
+                            which you want to display in the text box 
+                        2) A default string 
+                            to display in the text box (optional)
+            <b><u>Ex</u></b>:
+                    var user = prompt("Please enter you name");
+                    alert(user);
+                </pre>
+            </div>
+        </section>
+
+
+
+
+
+    <pre>    
+        The following code will result in what value?
+        <span id="result1"></span>
+    </pre>
+    <script>
+        function test(number) {
+            while(number < 5) {
+                number++;
+            }
+            return number;
+        }
+        document.getElementById("result1").innerHTML = test(2);
+    </script>
+</body>
+</html>

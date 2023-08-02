@@ -1,0 +1,16 @@
+#question {
+    font-size: 30px
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  h2 {
+    text-align: center;
+  }
+  
+  div {
+    outline: solid black 2px;
+    padding-left: 10px;
+  }

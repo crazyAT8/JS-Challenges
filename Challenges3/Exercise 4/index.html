@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript Exercise/Challenge</h1>
+    <h3>(Find Highest Even Number)</h3>
+    <pre>
+        <b><u>Objective</u></b>: Write a JavaScript program                     <b><u>Notes</u></b>:
+                    to get the largest even number                        - its going to have two functions
+                        from an array of integers.                          1) extract all the even numbers from an array 
+                                                                            2) get the highest number in an array 
+        <b><u>Steps</u></b>:
+            - create a variable thats an array of numbers
+            - create a variable function that will take an array as it's parameter 
+                - make sure not to hard code the parameter, 
+                - so give it something very general that pertains to numbers
+                    (aka "values")
+            - note we are looking for the highest even number 
+                - 2 conditions but one value 
+            - so lets create a variable within this function 
+                that will be the return value ending our function 
+                    and given that we are looking for the highest number lets set it's value to zero 
+            - then we need the function to look at every single number with in the array 
+                so we will use a for loop through the array 
+                    one at a time starting from the first index 
+                        and ending when the number of iterations in the loop 
+                            is the same as the amount of numbers in the array 
+            - every time an iteration occurs 
+                we need to check if 
+                    the value is greater then our return variable of zero 
+                    and that the number is an even number 
+                        if these two conditions are true 
+                            then the value being looked at during that iteration 
+                                will replace our in house return variable 
+        <b><u>Code</u></b>:
+        <b><u>Results</u></b>:
+                <span id="test1"></span>
+    </pre>
+    <script>
+        const numbers = [1, 2, 3, 4, 5, 6];
+
+        const largestEvenNumber = (values) => {
+            let highest = 0;
+            for (let i = 0; i < values.length; i += 1) {
+                if (values[i] > highest && values[i] % 2 == 0) {
+                    highest = values[i];
+                }
+                console.log(highest); // this will keep track of the iterations in the loog
+            }
+            return highest;
+        }
+
+        document.getElementById("test1").innerHTML = largestEvenNumber(numbers);
+
+    // There version 
+        const largestEven = (arr) => Math.max(...arr.filter(num => num % 2 === 0));
+    </script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flattening an Aray</title>
+</head>
+<body>
+    <h1>JavaScript Exercise/Challenge</h1>
+    <h3>(title)</h3>
+    <pre>
+        <b><u>Objective</u></b>: Take a multi dimentional                               <b><u>Notes</u></b>:
+                    or nested array and 
+                    make it into one array
+        
+        <b><u>Steps</u></b>:
+            - create a function 
+                with an arr or values as parameters 
+            - need to return an array 
+                could manipulate the array itself
+                    or create a new array 
+            - use reduce function 
+                which takes a function as a parameter 
+                    which takes two parameters 
+                        1. acc (accumulator)
+                            where you gather your initial data 
+                        2. item
+
+        <b><u>Code</u></b>:
+        <b><u>Results</u></b>: <span id="test1"></span>
+    </pre>
+    <script>
+        const numbers = [1,[2,3],[4,5,6,[7,8,9]]];
+
+        const flatten = (arr) => {
+            someNewArray = arr.reduce((acc,item) => {
+                // if item is an array
+                // or the item will be a number 
+                if(Array.isArray(item)) {
+                    acc = acc.concat(flatten(item));
+                }
+                else {
+                    acc.push(item);
+                }
+                return acc;
+            },[])
+            return someNewArray;
+        }
+
+        document.getElementById("test1").innerHTML = flatten(numbers);
+    </script>
+</body>
+</html>

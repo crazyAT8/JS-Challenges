@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect Two without the First</title>
+</head>
+<body>
+    <h1>JavaScript Challenges/Exercises</h1>
+    <h3>(connect two without the first)</h3>
+    <pre>
+        <b><u>Objective</u></b>: Write a JavaScript program             <b><u>Notes</u></b>: going to need to make a function 
+                   to concatenate two strings                    that takes two string arguments
+                   except their first character                  .slice() both from the index 1
+                                                                 then add them together
+                                                                 but how do I write the parameters in the function?
+        <b><u>Code</u></b>:
+        //First need to make sure I can return two seperate strings- SUCCESS
+        
+            function plusTwo(str1, str2) {
+                const one = str1;
+                const two = str2;
+                return one + two;
+            }
+        document.getElementById("result1").innerHTML = plusTwo("bitch", "cunt")
+
+        //Second slice the word off of the first letter- SUCCESS
+
+            function plusTwoNotOne(str1, str2) {
+                const x = str1.slice(1);
+                const y = str2.slice(1);
+                return x + y;
+            }
+        document.getElementById("result2").innerHTML = plusTwoNotOne("bitch", "cunt");
+
+        //Theirs
+
+        const concatenate = (str1, str2) =>
+            str1.slice(1) + str2.slice(1);
+
+        document.getElementById("result3").innerHTML = concatenate("mother", "fucker");  
+        
+        <b><u>Results</u></b>: <span id="result1"></span>
+                 <span id="result2"></span>
+                 <span id="result3"></span>
+    </pre>
+
+    <script>
+    //First need to make sure I can return two seperate strings- SUCCESS
+        function plusTwo(str1, str2) {
+            const one = str1;
+            const two = str2;
+            return one + two;
+        }
+
+        document.getElementById("result1").innerHTML = plusTwo("bitch", "cunt")
+
+    //Second slice the word off of the first letter- SUCCESS
+        function plusTwoNotOne(str1, str2) {
+            const x = str1.slice(1);
+            const y = str2.slice(1);
+            return x + y;
+        }
+
+        document.getElementById("result2").innerHTML = plusTwoNotOne("bitch", "cunt");
+
+    //Theirs
+        const concatenate = (str1, str2) =>
+            str1.slice(1) + str2.slice(1);
+
+        document.getElementById("result3").innerHTML = concatenate("mother", "fucker");
+    </script>
+</body>
+</html>

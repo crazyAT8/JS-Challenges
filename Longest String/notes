@@ -1,0 +1,27 @@
+declare a function
+
+pass the string in as a parameter
+    so what ever you feed the function
+        aka an argument
+            will be a string
+                writen in the ()
+                    of the function
+
+Next you want to split up the string
+    into an array
+        .split method
+            makes every word into an
+                indexed element of an array 
+Second variable
+    will be left empty
+        bc it will be the longest word 
+Then we need to
+    loop through the array
+        with a "for of" loop  
+So now your getting each and evey word 
+    in the array  
+If conditional statement
+    which measures the length of 
+        (add the .length to each variable)
+            every variable against one another
+                using  greater then 

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Exercises- Get Date</title>
+</head>
+<body>
+    <h1>JavaScript Exercise No. 4</h1>
+    <h2>(Get Current Date)</h2>
+        <pre>
+            <p>
+                Write a JavaScript program 
+                    to get the current date
+                Expected Output: 
+                    mm-dd-yyyy, mm/dd/yyyy or dd-mm-yyyy, dd/mm/yyyy 
+           
+                <b><u>Methods to consider</u></b>:
+                    - new Date()            //create as the original variable
+                    - .getFullYear()        //extract the following data from it
+                    - .getMonth()
+                    - .getDate()
+                        which gives you the number day of the month (1-31)
+                <b><u>Notes</u></b>:
+                    * step 1: gather all the dates
+                    * step 2: concatinate the data as a single String
+                    * step 3: concatinate with a particular divider (either slashes(/) or dashes(-) )
+                        this would actually be an Array Method
+                            <b><i>.join()</i></b>
+            </p>
+            <p id="resultOverview"></p>
+            <p id="resultYear"></p>
+            <p id="resultMonth"></p>
+            <p id="realMonth"></p>
+            <p id="resultDay"></p>
+            <p id="together"></p>
+            <p id="other"></p>
+        </pre>
+    <script>
+        let date = new Date;
+        let year = date.getFullYear().toString();
+        let month = date.getMonth() + 1;
+        let realMonth = month.toString();
+        let day = date.getDate().toString();
+        let together = realMonth.concat("/", day, "/", year);
+        
+
+        document.getElementById("resultOverview").innerHTML = date;
+        document.getElementById("resultYear").innerHTML = year;
+        document.getElementById("resultMonth").innerHTML = month;
+        document.getElementById("realMonth").innerHTML = realMonth;
+        document.getElementById("resultDay").innerHTML = day;
+        document.getElementById("together").innerHTML = together;
+
+        const formatDate = (date = new Date()) => {
+            const days = date.getDate();
+            const months = date.getMonth() + 1;
+            const years = date.getFullYear();
+            return `${days}/${months}/${years}`;
+        }
+
+        document.getElementById("other").innerHTML = formatDate();
+        
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+Url: https://www.youtube.com/watch?v=U0Ce27lA7R4&list=PLpc_YvcwbxaSn6jn0VaTcG8A0Grgs1GSB&index=2
+
+Exercise No. 1: "String's front back together"                                Whats used: 
+                Write a JavaScript program to create a new string                        + .slice() [string method]
+                from a given string taking the first 3 characters                        + functions/arrow functions 
+                and the last 3 characters of a string and adding                         + if else statement   
+                them together. The string length must be 3 or more,                      + ternary statement
+                if not, the original string is returned.
+
+Exercise No. 2: "Even Strings first Half"                                     Whats used:
+                Write a JavaScript program                                               + functions/arrow functions 
+                to extract the frist half                                                + .length property
+                of a string of even length                                               + division (/)
+                                                                                         + .slice() string method 
+                                                                                         + if else conditional statement 
+                                                                                         + variables
+Exercise No. 3: "Connect Two without the first"                               Whats used:
+                Write a JavaScript program
+                to concatenate two strings
+                except their first character.
+
+Exercise No. 4 "Which is closer"
+                Given two values,
+                write a JavaScript program
+                to find out which one 
+                is nearest to 100
+
+Exercise No. 5 "Any Repeats"
+                Write a JavaScript program 
+                to check a given string 
+                contains 2 to 4 occurences
+                of a specified character.

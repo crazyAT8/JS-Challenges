@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript Exercise/Challenge</h1>
+    <h3>(title)</h3>
+    <pre>
+        <b><u>Objective</u></b>:Write a JavaScript program                              <b><u>Notes</u></b>:
+                  to check whether a given array of integers                    aparently their is a way to write this function 
+                  is sorted in ascending order                                     as a one liner
+
+        
+        <b><u>Steps</u></b>:
+            - not sure where to start with this sorting exercise 
+            - is index 0 < index 1 if not then rearrange 
+            - need to really read the question
+                we are looking for a boolean value 
+                    we are not looking to rearrange the array 
+            - create a function with a for loop that will return false 
+                if the next number is smaller then the previous 
+                    it looks ahead in the loop?
+
+        <b><u>Code</u></b>:
+
+            const isAscending = (arr) => {
+                for (let i = 0; i < arr.length; i += 1) {
+                    if (arr[i+1] < arr[i]) return false;            // remember the (i)index is a index number 
+                }                                                   // and it seems like the loop can look ahead in the loop
+                return true;                                        // while staying with the given index
+            }
+
+            document.getElementById("test1").innerHTML = isAscending([1,2,3,4,5,6]);
+            document.getElementById("test2").innerHTML = isAscending([1,2,5,4,3,6]);
+            document.getElementById("test3").innerHTML = isAscending([1,2,3,4,6,6]);
+
+        <b><u>Results</u></b>:
+                <span id="test1"></span>  [1,2,3,4,5,6]
+                <span id="test2"></span> [1,2,5,4,3,6]
+                <span id="test3"></span>  [1,2,3,4,6,6]
+    </pre>
+    <script>
+        const isAscending = (arr) => {
+            for (let i = 0; i < arr.length; i += 1) {
+                if (arr[i+1] < arr[i]) return false;            // remember the (i)index is a index number 
+            }                                                   // and it seems like the loop can look ahead in the loop
+            return true;                                        // while staying with the given index
+        }
+
+        document.getElementById("test1").innerHTML = isAscending([1,2,3,4,5,6]);
+        document.getElementById("test2").innerHTML = isAscending([1,2,5,4,3,6]);
+        document.getElementById("test3").innerHTML = isAscending([1,2,3,4,6,6]);
+
+    </script>
+</body>
+</html>

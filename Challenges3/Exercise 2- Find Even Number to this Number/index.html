@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JavaScript Exercise/Challenge</h1>
+    <h3>(Find all the even number up untill a given number)</h3>
+    <pre>
+        <b><u>Objective</u></b>: Write a JavaScript program
+                    to find the number of 
+                    even values up to a given number.
+                    So if you input 5
+                    it would return 2 and 4 
+                    with a length of two numbers
+        <b><u>Notes</u></b>:
+        <b><u>Steps</u></b>:
+        <b><u>Code</u></b>:
+        <b><u>Results</u></b>: <span id="result1"></span>
+            <span id="result2"></span>
+            <span id="result3"></span>
+            <span id="result4"></span>
+    </pre>
+    <script>
+    // First attempt
+    //     function evenNum(num) {
+    //         var txt = '';
+    //         for (let i = 0; i < num; i+2) {
+    //             txt += num[i];  
+    //         } return txt;
+    //     }   
+
+    //     function numTest(num) {
+    //         for (let i = 0; i < num; i++) {
+
+    //         }
+    //     }
+
+    //     document.getElementById("result1").innerHTML = evenNum(5);
+    
+    // // Their way
+        const countEvenNumbers = (arr) => 
+            arr.filter(num => num % 2 === 0).length;
+
+        const createArrayOfNumbers = (num) => {
+            const returnArray = [];
+            for (let i = 1; i <= num; i += 1) {
+                returnArray.push(i);
+            }
+            return returnArray;
+        };
+// Test----------- It Creates an Array that loops from 1 to the given number 
+
+        document.getElementById("result2").innerHTML = createArrayOfNumbers(6);
+        document.getElementById("result3").innerHTML = createArrayOfNumbers(9);
+
+        document.getElementById("result4").innerHTML = countEvenNumbers(createArrayOfNumbers(9));
+    </script>
+</body>
+</html>
