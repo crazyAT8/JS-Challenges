@@ -11,3 +11,12 @@ Exercise No.2
     to determine if the first one contains 
     the same properties as the second one 
     (which may also have additional properties)
+
+Exercise No. 3                                                      Example:
+    Write a JavaScript program to convert                                   abc,def,ghi
+        a comma-seperated values (CSV) string                               jkl,mno,pqr
+            to a 2D array.                                                  stu,vwx,yza
+    A new line
+        indicates a new row 
+            in the array.
+
