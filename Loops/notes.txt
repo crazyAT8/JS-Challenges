@@ -1,0 +1,44 @@
+const arr = ['badger', 'beaver', 'baboon'];
+
+        for (let i = 0; i < arr.length;) {
+            
+        }
+
+1. keep track of the number of iterations that have been made       count 
+2. condition to stop the loop                                       shield
+3. increment the counter each time an iteration is completed        btw iterations
+
+
+// JavaScript also provides the forOf Loop 
+
+        us the "of" keyword
+            and pass in the name of the obj we are iterating over
+
+for (const e of arr) {
+    console.log(e);
+}
+
+// the array is iterable that implements an iterator function that allows it to be looped over 
+        we can override the for of loop by implementing our own iterator function
+            now the actual spec itself requires us to return an object that has a next property
+                which is itself a function that returns an object that will 
+                tell the loop whether or not its done
+                and also provide the current value at this iteration
+                    JS provides a way to make your own classes iterable 
+                    or override the default iteration behavior on an existing object
+
+arr[Symbol.iterator] = function() {
+    let i = 0;
+    let arr = this;
+    return {
+        next: function() {
+            if (i >= arr.length) {
+                return { done: true };
+            } else {
+                const value = arr[i];
+                i++;
+                return { value, done: false };
+            }
+        }
+    };
+};
