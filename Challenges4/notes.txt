@@ -20,3 +20,7 @@ Exercise No. 3                                                      Example:
         indicates a new row 
             in the array.
 
+Exercise No. 4
+    Write a JavaScript program 
+        to generate a random
+            hexadecimal color code

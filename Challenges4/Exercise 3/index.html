@@ -10,17 +10,24 @@
     <h1>JavaScript Exercise/Challenge</h1>
     <h3></h3>
     <pre>
-        <b><u>Objective</u></b>:
+        <b><u>Objective</u></b>:                                                         <b><u>Notes</u></b>:
                 Write a JavaScript program to convert a 
                     comma-seperated values (CSV) string to a 2D array.
                         A new line indicates a new row in the array.
-        <b><u>Notes</u></b>:
+        
         <b><u>Steps</u></b>:
         <b><u>Code</u></b>:
         <b><u>Results</u></b>:
     </pre>
     <script>
-        
+        const parseCSV = (csvString) => 
+            csvString.split('\n').map(row => row.split(','));
+
+        const str = `abc,def,ghi
+jkl,mno,pqr
+stu,vwx,yza`;
+            
+        console.log(parseCSV(str));
     </script>
 </body>
 </html>
