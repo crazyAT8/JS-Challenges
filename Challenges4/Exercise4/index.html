@@ -4,20 +4,85 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Random Hexadecimal</title>
 </head>
 <body>
     <h1>JavaScript Exercise/Challenge</h1>
     <h3>(random Hexadecial Number)</h3>
     <pre>
         <b><u>Objective</u></b>:
+            Write a JavaScript program to generate a 
+            random hexadecimal color code.
         <b><u>Notes</u></b>:
         <b><u>Steps</u></b>:
+            - generate random numbers 
+            - generate an array of three random number 
+            - generate random numbers btw 0 - 255
+            - generate an array of three random number between 0 and 255
+            - us the a floor function so there's no decimals involved
+            - us the .toString(16) function to convert them to hexadecimal numbers as well as strings 
+            - push them into an array 
+            - concatinate all three and add a '#' sign to the front of the final string 
         <b><u>Code</u></b>:
         <b><u>Results</u></b>:
+                    <div id="Example1"></div>
+                    <div id="Example2"></div>
+                    <div id="Example3"></div>
+                    <div id="Example4"></div>
+                    <div id="Example5"></div>
+                    <div id="Example6"></div>
+                    <div id="Example7"></div>
     </pre>
+
+    <button onclick="randomHexaColor()">Random Color</button>
+    <p id="displayColor"></p>
+
     <script>
-        
+        // My code
+        let x = Math.floor((Math.random() * 256) + 1);
+        let y = Math.floor((Math.random() * 256) + 1);
+        let z = Math.floor((Math.random() * 256) + 1);
+
+        document.getElementById("Example1").innerHTML = x;
+        document.getElementById("Example2").innerHTML = y;
+        document.getElementById("Example3").innerHTML = z;
+
+        let hexX = x.toString(16);
+        let hexY = y.toString(16);
+        let hexZ = z.toString(16);
+
+        document.getElementById("Example4").innerHTML = hexX;
+        document.getElementById("Example5").innerHTML = hexY;
+        document.getElementById("Example6").innerHTML = hexZ;
+
+        let numSign = "#";
+        let hexColor = numSign.concat(hexX,hexY,hexZ);
+
+        document.getElementById("Example7").innerHTML = hexColor;
+
+        function randomHexaColor() {
+            let a = Math.floor((Math.random() * 256) + 1).toString(16);
+            let b = Math.floor((Math.random() * 256) + 1).toString(16);
+            let c = Math.floor((Math.random() * 256) + 1).toString(16);
+            let numSign2 = "#";
+            let hexColor2 = numSign2.concat(a,b,c) ;
+            document.getElementById("displayColor").innerHTML = hexColor2;
+        }
+
+        // Their Code
+        const getRandomHexNumber = () => Math.floor(Math.random() * 16).toString(16);
+
+        const getRandomHexColor = () => '#' + Array.from({ length: 6}).map(getRandomHexNumber).join('');
+
+        console.log(getRandomHexNumber());
+        console.log(getRandomHexNumber());
+        console.log(getRandomHexNumber());
+        console.log(getRandomHexNumber());
+
+        console.log(getRandomHexColor());
+        console.log(getRandomHexColor());
+        console.log(getRandomHexColor());
+        console.log(getRandomHexColor());
     </script>
 </body>
 </html>

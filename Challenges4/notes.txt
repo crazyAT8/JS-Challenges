@@ -24,3 +24,23 @@ Exercise No. 4
     Write a JavaScript program 
         to generate a random
             hexadecimal color code
+
+Exercise No. 5
+    Write a JavaScript function that returns true 
+        if the provided predicate function returns
+            true for all elements in a collection, 
+                false otherwise.
+
+    in other words
+        write a function that excepts another function
+            and runs it against an array 
+                and if that function that's passed in 
+                is true for all of the items in the array
+                    return true over all 
+                        if not return false 
+    for example
+        if we had an array of [1, 2, 3, 4, 5]
+            and passed in a function that 
+            would check if each number is greater than 0
+            than it would return true
+
