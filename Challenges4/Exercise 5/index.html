@@ -53,12 +53,30 @@
                 document.getElementById("example4").innerHTML = [1, 2, 3, 4, 5].every(x => x > 3);
                 console.log([1, 2, 3, 4, 5].every(x => x > 3));
 
-                
+            // Now lets be more traditional about it and say that you can't use .every()
+                const isEveryElem = (arr, fn) => {
+                    for (let i=0; i&lt;arr.length; i+=1) {
+                        if (!fn(arr[i])) {
+                            return false;
+                        }
+                    }
+                    return true;
+                };
+
+
+                document.getElementById("example5").innerHTML = isEveryElem([1, 2, 3, 4, 5], (x) => x > 0);
+                console.log(isEveryElem([1, 2, 3, 4, 5], (x) => x > 0));
+                document.getElementById("example6").innerHTML = isEveryElem([1, 2, 3, 4, 5], (x) => x > 3);
+                console.log(isEveryElem([1, 2, 3, 4, 5], (x) => x > 0));
+
+
         <b><u>Results</u></b>: 
             <span id="example1"></span>
             <span id="example2"></span>
             <span id="example3"></span>
             <span id="example4"></span>
+            <span id="example5"></span>
+            <span id="example6"></span>
     </pre>
     <script>
     // My Way
@@ -91,6 +109,21 @@
         document.getElementById("example4").innerHTML = [1, 2, 3, 4, 5].every(x => x > 3);
         console.log([1, 2, 3, 4, 5].every(x => x > 3));
 
+    // Now lets be more traditional about it and say that you can't use .every()
+        const isEveryElem = (arr, fn) => {
+            for (let i=0; i<arr.length; i+=1) {
+                if (!fn(arr[i])) {
+                    return false;
+                }
+            }
+            return true;
+        };
+
+
+        document.getElementById("example5").innerHTML = isEveryElem([1, 2, 3, 4, 5], (x) => x > 0);
+        console.log(isEveryElem([1, 2, 3, 4, 5], (x) => x > 0));
+        document.getElementById("example6").innerHTML = isEveryElem([1, 2, 3, 4, 5], (x) => x > 3);
+        console.log(isEveryElem([1, 2, 3, 4, 5], (x) => x > 0));
     </script>
 </body>
 </html>
