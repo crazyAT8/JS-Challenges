@@ -8,16 +8,89 @@
 </head>
 <body>
     <h1>JavaScript Exercise/Challenge</h1>
-    <h3>(title)</h3>
+    <h3>(Elements Pass the Test)</h3>
     <pre>
         <b><u>Objective</u></b>:
+            Write a JavaScript function that 
+                returns true if the provided predicate function returns true 
+                    for all elements in a collection, false otherwise.
         <b><u>Notes</u></b>:
         <b><u>Steps</u></b>:
+            - Create an Array 
+            - attach the Array to .every() 
+            - as an argument, us a function that returns a boolean comparison
+                conditional statement comparing the Array 
+                    with a particular condition
         <b><u>Code</u></b>:
-        <b><u>Results</u></b>:
+                // My Way
+                    const ages = [32, 41, 31, 21, 88, 45];
+                    document.getElementById("example1").innerHTML = ages.every(checkAge);
+
+                    function checkAge(age) {
+                        return age >= 20;
+                    }
+                
+                    const checkAge2 = age => age == 16;
+                    const ages2 = [ 23, 44, 98, 34, 66];
+                    document.getElementById("example2").innerHTML = ages2.every(checkAge2);
+                
+                    // This is here to show what a regular function would look like
+                        // function checkAge2 (age) {
+                        //     return age == 16;
+                        // }
+
+                                    // if the arrow function was placed down here like the one above
+                                    // it wouldn't work bc it would be considered a 'Temporal Dead Zone'
+                                    //  which is caused by using 'const' or 'let'
+                                    // they are hoisted but not initialized
+                                    //      meaning they cannot be accessed in any way until the execution
+                                    //          reaches the line where they are declared and initialized
+
+
+            // Their Way
+                document.getElementById("example3").innerHTML = [1, 2, 3, 4, 5].every(x => x > 0);
+                console.log([1, 2, 3, 4, 5].every(x => x > 0));
+                document.getElementById("example4").innerHTML = [1, 2, 3, 4, 5].every(x => x > 3);
+                console.log([1, 2, 3, 4, 5].every(x => x > 3));
+
+                
+        <b><u>Results</u></b>: 
+            <span id="example1"></span>
+            <span id="example2"></span>
+            <span id="example3"></span>
+            <span id="example4"></span>
     </pre>
     <script>
+    // My Way
+        const ages = [32, 41, 31, 21, 88, 45];
+        document.getElementById("example1").innerHTML = ages.every(checkAge);
+
+        function checkAge(age) {
+            return age >= 20;
+        }
         
+        const checkAge2 = age => age == 16;
+        const ages2 = [ 23, 44, 98, 34, 66];
+        document.getElementById("example2").innerHTML = ages2.every(checkAge2);
+        
+        // function checkAge2 (age) {
+        //     return age == 16;
+        // }
+
+        // if the arrow function was placed down here like the one above
+        // it wouldn't work bc it would be considered a 'Temporal Dead Zone'
+        //  which is caused by using 'const' or 'let'
+        // they are hoisted but not initialized
+        //      meaning they cannot be accessed in any way until the execution
+        //          reaches the line where they are declared and initialized
+
+
+    // Their Way
+        document.getElementById("example3").innerHTML = [1, 2, 3, 4, 5].every(x => x > 0);
+        console.log([1, 2, 3, 4, 5].every(x => x > 0));
+        document.getElementById("example4").innerHTML = [1, 2, 3, 4, 5].every(x => x > 3);
+        console.log([1, 2, 3, 4, 5].every(x => x > 3));
+
     </script>
 </body>
 </html>
