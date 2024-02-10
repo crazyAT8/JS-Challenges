@@ -22,8 +22,8 @@
             1) convert the string into an array 
                 .split()
             2) convert the letters to their Unicode numerical value 
-                .charCode()
-                needs to to loop through the array and create a new one
+                .charCodeAt()
+                needs to to loop through the array and create a new one with the .map() array method 
             3) perform a bubble sort algorithm, to rearrange the numbers in ascending order 
             4) convert them from their numeric value to their letter value 
             5) convert the array back into a string 
@@ -32,7 +32,78 @@
         <b><u>Results</u></b>:
     </pre>
     <script>
+    // step #1
+        let string1 = "webmaster";
+        let array1 = string1.split("");
+
+        console.log(array1);
+
+    // step #2
+        let unicodeValues = array1.map(char => char.charCodeAt(0));
+        console.log(unicodeValues);
+
+    // step #3
+
+        function bubbleSort(arr) {
+
+            let n = arr.length;
+            let swapped;
+            do {
+                swapped = false;
+                for (let i = 1; i < n; i++) {
+                    if (arr[i - 1] > arr[i]) {
+                        // Swap elements
+                        let temp = arr[i - 1];
+                        arr[i - 1] = arr[i];
+                        arr[i] = temp;
+
+                        swapped = true;
+                    }
+                }
+                // Reduce n because the last element is already in place
+                n--;
+            } while (swapped);
+            return arr;
+        }
+
+        console.log("Sorted array:", bubbleSort(unicodeValues));
         
+    // step #4
+        let array2 = array1.map(num => String.fromCharCode(num));
+        console.log("Letters",array2);
+
+    // step #5
+        let array3 = ['a','b','c','d'];
+        let finaleWord = array3.join('');
+        console.log(finaleWord);
+
+
+
+        function alphabetize(str) {
+            let arr1 = str.split("");
+            let arr2 = arr1.map(char => char.charCodeAt(0));
+            let n = arr2.length;
+            let swapped;
+            do {
+                swapped = false;
+                for (let i = 1; i < n; i++) {
+                    if (arr2[i - 1] > arr2[i]) {
+                        // Swap elements
+                        let temp = arr2[i - 1];
+                        arr2[i - 1] = arr2[i];
+                        arr2[i] = temp;
+
+                        swapped = true;
+                    }
+                }
+                // Reduce n because the last element is already in place
+                n--;
+            } while (swapped);
+            let arr3 = arr2.map(num => String.fromCharCode(num)).join('');
+            return arr3;
+        }
+
+        console.log(alphabetize("webmaster"))
     </script>
 </body>
 </html>
