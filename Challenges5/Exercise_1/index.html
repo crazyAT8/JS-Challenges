@@ -103,7 +103,29 @@
             return arr3;
         }
 
+        console.log("webmaster")
         console.log(alphabetize("webmaster"))
+
+        const alphabeticalOrder = (str) =>
+            str.split('').sort((a,b) => a > b ? 1 : -1).join('');
+        
+            console.log('hello');
+            console.log(alphabeticalOrder('hello'))
+
+            // .sort() takes two parameters 
+            // a and b will be two value with each iteration 
+            //      that are comparing them against each other
+            //          to decide what order they should be reordered in
+            // on the first run
+            //      a and b will have the values of 'w' and 'e'
+            //          so we need to compare those values 
+            //              and make a decision as to what order to put them in
+            // is a greater than b
+            //  we need to return one of two values
+            //      need to return a positive number 1
+            //          or a negative number such as minus 1
+            // this apparently orders the letters in the string
+            //  in alphabetical ascending order
     </script>
 </body>
 </html>
