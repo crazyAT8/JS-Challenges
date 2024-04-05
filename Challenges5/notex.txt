@@ -8,4 +8,7 @@ Exercise No. 1
     Expected Output: 'abeemrstw'
 
 
-
+Exercise No. 2
+    Write a JavaScript function that accepts a 
+    string as a parameter and counts the number 
+    of vowels with in the string.
